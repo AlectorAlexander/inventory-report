@@ -1,4 +1,4 @@
-#!/home/alector/Documentos/projetos/sd-019-a-inventory-report/.ven/bin/python3
+#!/home/alector/Documentos/projetos/sd-019-a-inventory-report/.ven/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

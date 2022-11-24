@@ -25,3 +25,16 @@ class Product:
             f" até {self.data_de_validade}"
             f" precisa ser armazenado {self.instrucoes_de_armazenamento}."
         )
+
+
+new_product = Product(
+    22,
+    "arroz",
+    "BlackSuit",
+    "22-02-02",
+    "12-12-12",
+    "4f6s5d4fs21c5sdr8g4d",
+    "numa panela com carvão dentro",
+)
+
+print(new_product.__repr__())

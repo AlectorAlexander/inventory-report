@@ -1,45 +1,22 @@
-import csv
-import xmltodict
-import json
 from inventory_report.reports.complete_report import CompleteReport
+from inventory_report.importer.xml_importer import XmlImporter
+from inventory_report.importer.json_importer import JsonImporter
+from inventory_report.importer.csv_importer import CsvImporter
 from inventory_report.reports.simple_report import SimpleReport
 
 
 class Inventory:
     @classmethod
     def csvCase(cls, path):
-        lista_arquivos = []
-        with open(path, encoding="utf-8") as file:
-            response = csv.DictReader(file, delimiter=",", quotechar='"')
-            for arq in response:
-                lista_arquivos.append(arq)
-        return lista_arquivos
-
-    @classmethod
-    def jsonCase(cls, path):
-        lista_arquivos = []
-        with open(path) as file:
-            response = json.load(file)
-            for arq in response:
-                lista_arquivos.append(arq)
-        return lista_arquivos
-
-    @classmethod
-    def xmlCase(cls, path):
-        with open(path) as fd:
-            xml = xmltodict.parse(fd.read())
-            jSON = json.dumps(xml)
-            response = json.loads(jSON)
-            lista_arquivos = response["dataset"]["record"]
-        return lista_arquivos
+        pass
 
     def just_in_the_case(path):
         if path.endswith(".csv"):
-            lista_arquivos = Inventory.csvCase(path)
+            lista_arquivos = CsvImporter.import_data(path)
         elif path.endswith(".json"):
-            lista_arquivos = Inventory.jsonCase(path)
+            lista_arquivos = JsonImporter.import_data(path)
         elif path.endswith(".xml"):
-            lista_arquivos = Inventory.xmlCase(path)
+            lista_arquivos = XmlImporter.import_data(path)
         return lista_arquivos
 
     @classmethod

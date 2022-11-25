@@ -39,36 +39,3 @@ class CompleteReport(SimpleReport):
             f"Produtos estocados por empresa:\n"
             f"{text}"
         )
-
-
-test = [
-    {
-        "id": 1,
-        "nome_do_produto": "CADEIRA",
-        "nome_da_empresa": "Nature",
-        "data_de_fabricacao": "2022-04-04",
-        "data_de_validade": "2023-02-09",
-        "numero_de_serie": "FR48",
-        "instrucoes_de_armazenamento": "Conservar em local fresco",
-    },
-    {
-        "id": 2,
-        "nome_do_produto": "CADEIRA",
-        "nome_da_empresa": "Forces of Nature",
-        "data_de_fabricacao": "2022-04-04",
-        "data_de_validade": "2022-11-30",
-        "numero_de_serie": "FR48",
-        "instrucoes_de_armazenamento": "Conservar em local fresco",
-    },
-    {
-        "id": 2,
-        "nome_do_produto": "CADEIRA",
-        "nome_da_empresa": "Nature",
-        "data_de_fabricacao": "2020-04-04",
-        "data_de_validade": "2023-11-30",
-        "numero_de_serie": "FR48",
-        "instrucoes_de_armazenamento": "Conservar em local fresco",
-    },
-]
-
-print(CompleteReport().generate(test))

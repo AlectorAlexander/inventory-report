@@ -6,9 +6,6 @@ from inventory_report.reports.simple_report import SimpleReport
 
 
 class Inventory:
-    @classmethod
-    def csvCase(cls, path):
-        pass
 
     def just_in_the_case(path):
         if path.endswith(".csv"):
@@ -17,6 +14,8 @@ class Inventory:
             lista_arquivos = JsonImporter.import_data(path)
         elif path.endswith(".xml"):
             lista_arquivos = XmlImporter.import_data(path)
+        else:
+            raise ValueError("Arquivo inválido")
         return lista_arquivos
 
     @classmethod

@@ -62,4 +62,4 @@ class SimpleReport:
             f"Data de fabricação mais antiga: {data_de_fabricacao}\n"
             f"Data de validade mais próxima: {data_de_validade}\n"
             f"Empresa com mais produtos: {nome_da_empresa}"
-        )
+            )

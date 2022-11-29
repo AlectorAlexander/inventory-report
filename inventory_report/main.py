@@ -14,7 +14,7 @@ def csv_situation():
     response = InventoryRefactor(CsvImporter).import_data(
         path=sys.argv[1], forma=sys.argv[2]
     )
-    print(response)
+    print(response, end='')
     return response
 
 
@@ -22,7 +22,7 @@ def json_situation():
     response = InventoryRefactor(JsonImporter).import_data(
         path=sys.argv[1], forma=sys.argv[2]
     )
-    print(response)
+    print(response, end='')
     return response
 
 
@@ -30,7 +30,7 @@ def xml_situation():
     response = InventoryRefactor(XmlImporter).import_data(
         path=sys.argv[1], forma=sys.argv[2]
     )
-    print(response)
+    print(response, end='')
     return response
 
 

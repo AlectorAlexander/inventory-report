@@ -14,10 +14,7 @@ class CompleteReport(SimpleReport):
 
         text = ""
         for empresa in unique_list:
-            if empresa != unique_list[-1]:
-                text += f"- {empresa[0]}: {empresa[1]}\n"
-            else:
-                text += f"- {empresa[0]}: {empresa[1]}"
+            text += f"- {empresa[0]}: {empresa[1]}\n"
         return text
 
     @classmethod
